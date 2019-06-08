@@ -36,9 +36,9 @@ ACCOUNT_FIXTURE()
 	acc = make_account(address, viewkey);
 }
 
-string address = "44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A";
-string viewkey = "f359631075708155cc3d92a32b75a7d02a5dcf27756707b47a2b31b21c389501";
-unique_ptr<Account> acc; 
+string address = "ar4DExwEr4qM2dBRimSjZ5B11rZbAS9HEFeMYkgw3Ts4NQvS2NY2ra22M5CoQBDifWVxfig8fz7QvQ3xDmGtRt1o1UP8jPTEQ";
+string viewkey = "3ee53c136c57080c340e56f0545dad23a591b8bd5d2b89cff3c4182c88aa36fc";
+unique_ptr<Account> acc;
 };
 
 
@@ -55,7 +55,7 @@ TEST_F(ACCOUNT_FIXTURE, ConstructWithAcc)
 
 TEST_F(ACCOUNT_FIXTURE, CreateFactoryEmptyJson)
 {
-    nl::json in_data; 
+    nl::json in_data;
 
     auto task = OutputSearchTask::create(in_data);
 
@@ -67,7 +67,7 @@ TEST_F(ACCOUNT_FIXTURE, CreateFactoryUsingJson)
     nl::json in_data {
         {"address", address},
         {"viewkey", viewkey},
-    }; 
+    };
 
     {
         auto task = OutputSearchTask::create(in_data);
@@ -79,7 +79,7 @@ TEST_F(ACCOUNT_FIXTURE, CreateFactoryUsingJson)
         auto task = OutputSearchTask::create(in_data2);
         EXPECT_FALSE(bool {task});
     }
-    
+
     {
         auto in_data2 = in_data;
 
@@ -107,10 +107,9 @@ TEST(OUTPUT_SEARCH, ForPrimaryAccount)
      MockMicroCore mcore;
 
 
-    
-}
-
-
 
 }
 
+
+
+}
